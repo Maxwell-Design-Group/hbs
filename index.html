@@ -35,7 +35,7 @@ outline:none;
     <div id="map" class="map"></div>
     <div class="nav-wrap">
       <nav class="nav__inner-wrap">
-        <a href="#top" class="nav-item w-inline-block"></a>
+        <a href="#top" class="nav-item w-inline-block" style="background-color: #A41034"></a>
         <a href="#social-roast" class="nav-item w-inline-block"></a>
         <a href="#spangler-food-hall" class="nav-item w-inline-block"></a>
         <a href="#bakery-cafe" class="nav-item w-inline-block"></a>
@@ -55,7 +55,7 @@ outline:none;
         <p class="intro__sub-title">Scroll Down To Explore</p>
     </div>
     <div id="top" class="section active wf-section"></div>
-    <div style="height: 40px"></div>
+
       <div id="social-roast" class="section wf-section">
         <div class="section__inner-wrap">
           <img style="width: 95%" src="assets/social-roast.png" alt="Social Roast Coffee">
@@ -63,8 +63,8 @@ outline:none;
       </div>
       <div id="spangler-food-hall" class="section wf-section">
         <div class="section__inner-wrap">
-          <img src="assets/spangler-floorplan.png">
           <img style="width: 20%;"src="assets/spangler-food-hall.svg">
+          <img src="assets/spangler-floorplan.png">
           <p></p>
         </div>
       </div>
@@ -75,7 +75,7 @@ outline:none;
       </div>
       <div id="under-study" class="section wf-section">
         <div class="section__inner-wrap">
-          <div id="myCarousel" class="carousel slide" data-pause="hover" style="z-index: 999;">
+          <div id="myCarousel" class="carousel slide" data-interval="false" style="z-index: 999;">
             <!-- Indicators -->
             <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -91,7 +91,7 @@ outline:none;
                 <img src="assets/under-study-02.png" alt="Kitchen">
               </div>
               <div class="item">
-                <img src="assets/under-study-03png.png" alt="Rendering">
+                <img src="assets/under-study-03.png" alt="Rendering">
               </div>
             </div>
             <!-- Left and right controls -->
@@ -155,53 +155,34 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZHlsYW5tYXh3ZWxsIiwiYSI6ImNrcTczNGtzNTAwcDYyb
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/dylanmaxwell/cl62xy212004015pcdiz751dt',
-center: [-71.12230, 42.36542],
-zoom: 17.53,
-pitch: 60.00,
-bearing: 14.21,
+  center: [-71.12230, 42.36542],
+  zoom: 16.61,
+  pitch: 60.00,
+  bearing: 14.21,
   container: 'map',
   antialias: true,
   interactive: false
 });
 
 
+
 // The 'building' layer in the mapbox-streets vector source contains building-height
 // data from OpenStreetMap.
-map.on('load', function() {
-// Insert the layer beneath any symbol layer.
-  var layers = map.getStyle().layers;
-  var labelLayerId;
-  for (var i = 0; i < layers.length; i++) {
-    if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
-      labelLayerId = layers[i].id;
-      break;
-    }
-
+map.on('load', () => {
     map.addLayer({
-      'id': '3d-buildings',
-      'source': 'composite',
-      'source-layer': 'hbs-buildings',
-      'filter': ['==', 'extrude', 'false'],
-      'type': 'fill-extrusion',
-      'minzoom': 15,
-      'paint': {
-        'fill-extrusion-color': '#A41034',
-        // use an 'interpolate' expression to add a smooth transition effect to the
-        // buildings as the user zooms in
-        'fill-extrusion-height': [
-        "interpolate", ["linear"], ["zoom"],
-        15, 0,
-        15.05, ["get", "height"]
-        ],
-        'fill-extrusion-base': [
-        "interpolate", ["linear"], ["zoom"],
-        15, 0,
-        15.05, ["get", "min_height"]
-        ],
-        'fill-extrusion-opacity': .85
-      }
-    }, labelLayerId);
-  }});
+      id: 'testy',
+      type: 'fill-extrusion',
+      source: {
+        type: 'vector',
+        url: 'dylanmaxwell.cl60gw7uq05bz24mjopsytykb-8e42e'
+      },
+      'source-layer': 'HBS_Buildings',
+      paint: {
+        'fill-color': '#000000',
+        'fill-opacity': 1
+      },
+    },labelLayerId);
+  });
 
 var chapters = {
     'top': {
@@ -217,17 +198,6 @@ var chapters = {
       zoom: 18.66,
       pitch: 59.00,
       bearing: -160.99,
-      onChapterEnter: [
-        {
-          layer: 'hbs-buildings',
-          opacity: 0
-        },
-        {
-          layer: 'spangler-solo',
-          opacity: 1
-        }
-      ],
-        onChapterExit: []
     },
     'spangler-food-hall': {
         duration: 5000,
@@ -316,11 +286,11 @@ window.onscroll = function() {
         var chapterName = chapterNames[i];
         if (isElementOnScreen(chapterName)) {
             setActiveChapter(chapterName);
-            break;
+        break;
         }
     }
 };
-var activeChapterName = 'social-roast';
+var activeChapterName = 'top';
 function setActiveChapter(chapterName) {
     if (chapterName === activeChapterName) return;
     map.flyTo(chapters[chapterName]);
