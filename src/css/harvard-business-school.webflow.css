@@ -18,8 +18,6 @@ p {
   font-weight: 300;
 }
 
-
-
 .features {
   position: relative;
   left: auto;
@@ -238,7 +236,7 @@ p {
 
 #span-rollout span{
   font-size:14px;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
   bottom: 0;
@@ -249,12 +247,9 @@ p {
   position: absolute;
   white-space: nowrap;
   width: 0;
-  
-  /* CSS3 Transition: */
--webkit-transition: 0.50s;
-/* Future proofing (these do not work yet): */
--moz-transition: 0.50s;
-transition: 0.50s;  
+  -webkit-transition: 0.50s;
+  -moz-transition: 0.50s;
+  transition: 0.50s;  
 }
 
 #span-rollout a:hover span{ width:auto; padding:0 30px; overflow:visible; }

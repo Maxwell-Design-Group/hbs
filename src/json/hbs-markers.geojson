@@ -1,0 +1,126 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "concept": "Teele Market",
+        "id": "teele-market"
+      },
+      "geometry": {
+        "coordinates": [-71.124766, 42.365259],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "concept": "Morgan Market",
+        "id": "morgan-market"
+      },
+      "geometry": {
+        "coordinates": [-71.12393, 42.366812],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "concept": "Gallatin Market",
+        "id": "gallatin-market"
+      },
+      "geometry": {
+        "coordinates": [-71.123337, 42.367331],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "concept": "Faculty Dining",
+        "id": "faculty-dining"
+      },
+      "geometry": {
+        "coordinates": [-71.122571, 42.366326],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "concept": "Spangler Food Hall",
+        "id": "spangler-food-hall"
+      },
+      "geometry": {
+        "coordinates": [-71.123003, 42.364947],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "concept": "Bakery Cafe",
+        "id": "bakery-cafe"
+      },
+      "geometry": {
+        "coordinates": [-71.12273, 42.364828],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "concept": "Under Study",
+        "id": "under-study"
+      },
+      "geometry": {
+        "coordinates": [-71.12247, 42.364888],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "concept": "Social Roast",
+        "id": "social-roast"
+      },
+      "geometry": {
+        "coordinates": [-71.122148, 42.365194],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "concept": "Aldrich Market",
+        "id": "aldrich-market"
+      },
+      "geometry": {
+        "coordinates": [-71.122024, 42.365896],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "concept": "Chao Dining",
+        "id": "chao-dining"
+      },
+      "geometry": {
+        "coordinates": [-71.119841, 42.366392],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "concept": "Tata Hall",
+        "id": "tata-hall"
+      },
+      "geometry": {
+        "coordinates": [-71.118629, 42.366321],
+        "type": "Point"
+      }
+    }
+  ]
+}
