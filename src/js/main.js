@@ -1,4 +1,4 @@
-var modals = document.getElementsByClassName("modal");
+var modals = document.getElementsByClassName("myModal");
 var btns = document.getElementsByClassName("openmodal");
 var spans = document.getElementsByClassName("close");
 for (let i = 0; i < btns.length; i++) {
@@ -16,7 +16,7 @@ for (let i = 0; i < spans.length; i++) {
 
 $(document).keydown((e) => {
     if(e.keyCode == 27) {
-        $(".modal").hide(300);
+        $(".myModal").hide(300);
         document.querySelector("body").style.overflow = 'visible';
     }
     });
