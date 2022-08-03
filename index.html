@@ -85,7 +85,7 @@
                   <div class="item">
                     
                       <div class="embed-responsive embed-responsive-16by9">
-                        <video controls autoplay muted loop class="embed-responsive-item">
+                        <video controls autoplay muted  class="embed-responsive-item">
                             <source src="/assets/SocialRoastMobileOrder.mov" type="video/mp4">
                         </video>
                     </div>
@@ -192,7 +192,7 @@
                   <div class="item">
                     <div class="container">
                       <div class="embed-responsive embed-responsive-16by9">
-                        <video controls autoplay muted loop class="embed-responsive-item">
+                        <video controls autoplay muted  class="embed-responsive-item">
                             <source src="/assets/TheUnderStudyOrder.mov" type="video/mp4">
                         </video>
                     </div>
@@ -286,7 +286,7 @@
                   <div class="item">
                     <div class="container">
                       <div class="embed-responsive embed-responsive-16by9">
-                        <video controls autoplay muted loop class="embed-responsive-item">
+                        <video controls autoplay muted  class="embed-responsive-item">
                             <source src="/assets/ScanAndPayPurchase.mov" type="video/mp4">
                         </video>
                     </div>
@@ -367,7 +367,7 @@
                   <div class="item">
                     <div class="container">
                       <div class="embed-responsive embed-responsive-16by9">
-                        <video controls autoplay muted loop class="embed-responsive-item">
+                        <video controls autoplay muted  class="embed-responsive-item">
                             <source src="/assets/JacksBurritoOrder.mov" type="video/mp4">
                         </video>
                     </div>
@@ -382,7 +382,7 @@
                   <div class="item">
                     <div class="container">
                       <div class="embed-responsive embed-responsive-16by9">
-                        <video controls autoplay muted loop class="embed-responsive-item">
+                        <video controls autoplay muted  class="embed-responsive-item">
                             <source src="/assets/quickeats.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -465,9 +465,11 @@
             'source': 'point', // reference the data source
             'layout': {
               'icon-image': 'innovation', // reference the image
-              'icon-size': 0.5
+              'icon-size': 1,
+              'visibility': 'none'
             }
           });
+          
         }
       );
     });
@@ -565,6 +567,7 @@
         map.setPaintProperty('hbs-markers', 'icon-opacity', ['match', ['get', 'concept'], 'Tata Hall', 1, 0]);
       } else if (isElementOnScreen('innovation')) {
         map.setPaintProperty('hbs-markers', 'icon-opacity', 1, 0);
+        map.setLayoutProperty('points', 'visibility', 'visible');
       }
 
 
