@@ -553,18 +553,25 @@
         map.setPaintProperty('hbs-markers', 'icon-opacity', 1, 0);
       } else if (isElementOnScreen('social-roast')) {
         map.setPaintProperty('hbs-markers', 'icon-opacity', ['match', ['get', 'concept'], 'Social Roast', 1, 0]);
+        map.setLayoutProperty('points', 'visibility', 'none');
       } else if (isElementOnScreen('spangler-food-hall')) {
         map.setPaintProperty('hbs-markers', 'icon-opacity', ['match', ['get', 'concept'], 'Spangler Food Hall', 1, 0]);
+        map.setLayoutProperty('points', 'visibility', 'none');
       } else if (isElementOnScreen('under-study')) {
         map.setPaintProperty('hbs-markers', 'icon-opacity', ['match', ['get', 'concept'], 'Under Study', 1, 0]);
+        map.setLayoutProperty('points', 'visibility', 'none');
       } else if (isElementOnScreen('faculty-dining')) {
         map.setPaintProperty('hbs-markers', 'icon-opacity', ['match', ['get', 'concept'], 'Faculty Dining', 1, 0]);
+        map.setLayoutProperty('points', 'visibility', 'none');
       } else if (isElementOnScreen('markets')) {
         map.setPaintProperty('hbs-markers', 'icon-opacity', ['match', ['get', 'concept'], ['Gallatin Market', 'Morgan Market', 'Aldrich Market', 'Teele Market'], 1, 0]);
+        map.setLayoutProperty('points', 'visibility', 'none');
       } else if (isElementOnScreen('chao')) {
         map.setPaintProperty('hbs-markers', 'icon-opacity', ['match', ['get', 'concept'], 'Chao Dining', 1, 0]);
+        map.setLayoutProperty('points', 'visibility', 'none');
       } else if (isElementOnScreen('tata')) {
         map.setPaintProperty('hbs-markers', 'icon-opacity', ['match', ['get', 'concept'], 'Tata Hall', 1, 0]);
+        map.setLayoutProperty('points', 'visibility', 'none');
       } else if (isElementOnScreen('innovation')) {
         map.setPaintProperty('hbs-markers', 'icon-opacity', 1, 0);
         map.setLayoutProperty('points', 'visibility', 'visible');
