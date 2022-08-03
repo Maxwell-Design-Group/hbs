@@ -417,9 +417,47 @@
       antialias: true,
       interactive: false
     });
-
     map.on('load', () => {
-
+// Load an image from an external URL.
+map.loadImage(
+"assets/innovation.png",
+(error, image) => {
+if (error) throw error;
+ 
+// Add the image to the map style.
+map.addImage('innovation', image);
+ 
+// Add a data source containing one point feature.
+map.addSource('point', {
+'type': 'geojson',
+'data': {
+'type': 'FeatureCollection',
+'features': [
+{
+'type': 'Feature',
+'geometry': {
+'type': 'Point',
+'coordinates': [-71.12030, 42.36490]
+}
+}
+]
+}
+});
+ 
+// Add a layer to use the image to represent the data.
+map.addLayer({
+'id': 'points',
+'type': 'symbol',
+'source': 'point', // reference the data source
+'layout': {
+'icon-image': 'innovation', // reference the image
+'icon-size': 0.5
+}
+});
+}
+);
+});
+    map.on('load', () => {
       map.setLayoutProperty('spangler-solo', 'visibility', 'none');
     });
 
